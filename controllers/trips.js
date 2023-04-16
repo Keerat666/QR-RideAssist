@@ -80,7 +80,7 @@ module.exports = {
             },
           }
 
-          QRCode.toFile('qrCode.png',"", opts).then(qrImage => {
+          QRCode.toFile('qrCode.png',"643bcd1ef464b5c513cf426a", opts).then(qrImage => {
 
             res.status(201).json({"status" : "QR Generated"})
           }).catch(err => {
