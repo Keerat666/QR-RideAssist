@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-
 //Set up default mongoose connection
 var conn = mongoose.connect(process.env.mongoPath, { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true })
     .then((db) => {
