@@ -1,7 +1,7 @@
 const express = require('express');
 var cors = require('cors')
 const app = express();
-const PORT = 8000;
+const PORT = process.env.PORT || 3030;
 var usersRouter = require('./routes/user_routes');
 var driversRouter = require('./routes/driver_routes');
 var tripsRouter = require('./routes/trip_routes');

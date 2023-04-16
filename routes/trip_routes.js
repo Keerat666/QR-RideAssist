@@ -26,6 +26,10 @@ router.post('/initiateTrip', function(req, res) {
    trip.create_trip(req,res)
 });
 
+router.post('/generateQR', function(req, res) {
+    trip.generateQR(req,res)
+ });
+
 
 router.post('/login', function(req, res) {
     users.user_login(req, res)
