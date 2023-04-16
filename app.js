@@ -3,6 +3,9 @@ var cors = require('cors')
 const app = express();
 const PORT = 8000;
 var usersRouter = require('./routes/user_routes');
+var driversRouter = require('./routes/driver_routes');
+var tripsRouter = require('./routes/trip_routes');
+
 const swStats = require('swagger-stats');
 var swaggerUi = require('swagger-ui-express')
 var swaggerDocument = require('./docs/swagger.json');
@@ -43,6 +46,10 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 console.log("Swagger running at port 8000 at /api-docs")
     //setting up route for user related API's
 app.use('/api/v1/users', usersRouter);
+app.use('/api/v1/drivers', driversRouter);
+
+app.use('/api/v1/trips', tripsRouter);
+
 
 
 
