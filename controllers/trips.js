@@ -9,7 +9,8 @@ module.exports = {
     create_trip(req, res) {
         var body = req.body;
         console.log(body,"Body")
-
+        let bodyRequest=JSON.parse(req.body)
+        console.log("User Mobile",bodyRequest.user_mobile)
 
         UserModel.findOne({
             phone_no: body.user_mobile
