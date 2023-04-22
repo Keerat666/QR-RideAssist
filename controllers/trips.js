@@ -8,6 +8,7 @@ const QRCode = require('qrcode')
 module.exports = {
     create_trip(req, res) {
         var body = req.body;
+        console.log(body,"Body")
 
 
         UserModel.findOne({
