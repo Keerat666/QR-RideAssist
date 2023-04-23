@@ -30,6 +30,13 @@ router.post('/generateQR', function(req, res) {
     trip.generateQR(req,res)
  });
 
+ router.get('/fetchTrips', function(req, res) {
+    trip.getLatestTrips(req,res)
+ });
+
+ router.get('/fetchStats', function(req, res) {
+    trip.getTodayTripsCountAndTotalAmount(req,res)
+ });
 
 router.post('/login', function(req, res) {
     users.user_login(req, res)

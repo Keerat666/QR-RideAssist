@@ -102,6 +102,34 @@ module.exports = {
       
           return res.json({ trips});
         });
+      },
+
+      async getLatestTrips (req, res)  {
+        try {
+          const latestTrips = await TripModel.find({driver_id : req.query.driverID}).sort({ date: -1 }).limit(5);
+          res.status(200).json(latestTrips);
+        } catch (error) {
+          res.status(500).json({ message: error.message });
+        }
+      },
+
+       async getTodayTripsCountAndTotalAmount(req, res){
+        try {
+          const today = new Date();
+          today.setHours(0,0,0,0); // set time to start of day
+          const tomorrow = new Date(today);
+          tomorrow.setDate(tomorrow.getDate() + 1); // set time to start of next day
+          const todayTrips = await TripModel.find({
+            id_created_at: { $gte: today, $lt: tomorrow },
+            trip_status: 'Finished', driver_id : req.query.driverID
+          });
+          const count = todayTrips.length;
+          const totalAmount = todayTrips.reduce((sum, trip) => sum + trip.trip_fare, 0);
+          res.status(200).json({ count, totalAmount });
+        } catch (error) {
+          console.error(error);
+          res.status(500).json({ message: 'Internal server error' });
+        }
       }
 
     
