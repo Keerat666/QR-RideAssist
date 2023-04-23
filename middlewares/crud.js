@@ -79,6 +79,32 @@ module.exports = {
             })
     },
 
+    getEntryByMobile(req, res, modelObj)
+
+    {
+
+
+        modelObj
+            .findOne({ "phone_no": req.query.phone_no })
+            .then(result => {
+                if (result == null)
+                    return res.status(201).json({ "err": "id not found" });
+                else if (result == [])
+                    return res.status(201).json({ "err": "No such ID found" });
+                else
+                    return res.status(201).json({"data" : result, "error" : ""});
+
+
+            }).catch(err => {
+                console.log(err)
+                res.status(500).json({
+                    error: "Incorrect ID format",
+                    "dump": err
+                })
+
+            })
+    },
+
     deleteEntryByID(req, res, modelObj)
 
     {

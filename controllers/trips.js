@@ -69,6 +69,7 @@ module.exports = {
 
     generateQR(req, res) {
 
+        console.log("DriverID",req.body.driverID)
         const opts = {
             errorCorrectionLevel: 'H',
             type: 'terminal',
@@ -80,7 +81,7 @@ module.exports = {
             },
           }
 
-          QRCode.toFile('qrCode.png',"643bcd1ef464b5c513cf426a", opts).then(qrImage => {
+          QRCode.toFile(req.body.driverID+'qrCode.png',req.body.driverID, opts).then(qrImage => {
 
             res.status(201).json({"status" : "QR Generated"})
           }).catch(err => {

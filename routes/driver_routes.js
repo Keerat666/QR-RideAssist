@@ -18,6 +18,10 @@ router.get('/DriverByID', function(req, res) {
     crud.getEntryByID(req, res, DriverModel)
 });
 
+router.get('/DriverByMobile', function(req, res) {
+    crud.getEntryByMobile(req, res, DriverModel)
+});
+
 router.post('/signup', function(req, res) {
     crud.createEntry(req, res, DriverModel)
 });
