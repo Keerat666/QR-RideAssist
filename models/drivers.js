@@ -14,7 +14,8 @@ var driverSchema = new Schema({
     driving_license: { type: String, unique: true, required: true, description: "Should be unique" },
     password: { type: String, required: true, description: "Should be unique" },
     profile_picture: { type: String, default: "https://res.cloudinary.com/dwckgkzdz/image/upload/v1604757274/buddha_wyz1ek.jpg" },
-    salt: { type: String, required: false, description: "Salt to be used in hashing" }
+    salt: { type: String, required: false, description: "Salt to be used in hashing" },
+    qrRideStatus : { type: String, enum: ['Active', 'Inactive'] , default : "Active"}
 }, { collection: 'drivers' });
 
 driverSchema.methods.hashPassword = function(password) {
