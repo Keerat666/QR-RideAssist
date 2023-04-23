@@ -92,7 +92,7 @@ module.exports = {
                 else if (result == [])
                     return res.status(201).json({ "err": "No such ID found" });
                 else
-                    return res.status(201).json({"data" : result, "error" : ""});
+                    return res.status(201).json({"data" : result, "err" : ""});
 
 
             }).catch(err => {
