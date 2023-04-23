@@ -89,7 +89,20 @@ module.exports = {
               res.status(500).json({"status" : "QR not generated." , "error" : err})
 
           })
-    }
+    },
+
+    getActiveTripsForDriver (req, res) {
+        const  driverID  = req.query.driverID;
+        console.log("driverID",driverID)
+      
+        TripModel.find({ driver_id: driverID, trip_status: 'Active' }, (err, trips) => {
+          if (err) {
+            return res.status(500).json({ error: err });
+          }
+      
+          return res.json({ trips});
+        });
+      }
 
     
 }

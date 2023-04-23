@@ -3,6 +3,7 @@ var router = express.Router();
 const DriverModel = require('../models/drivers')
 
 // var users = require('../controllers/users')
+let drivers = require('../controllers/trips')
 
 var crud = require('../middlewares/crud')
 
@@ -36,6 +37,10 @@ router.put('/edit', function(req, res) {
 
 router.delete('/delete', function(req, res) {
     crud.deleteEntryByID(req, res, DriverModel);
+});
+
+router.get('/newRides', function(req, res) {
+   drivers.getActiveTripsForDriver(req, res, DriverModel)
 });
 
 
