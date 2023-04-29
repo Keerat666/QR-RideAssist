@@ -1,27 +1,46 @@
 # QR-RideAssist
-A dummy backend for an auto booking app that enables booking of a cab by scanning a dynamically generated QR code.
 
-A version of this project is deployed on a free instance at render and can be found at : 
+QR-RideAssist is a backend for an auto booking app that enables users to book a cab by scanning a dynamically generated QR code. This project provides a seamless experience for both riders and drivers in the process of hailing and providing rides.
 
-https://rideassist.onrender.com/api/v1/drivers/test
+## Demo and Documentation
 
-Backend Documentation can be found at : 
+- A live version of this project is deployed on a free instance at Render and can be accessed at: [https://rideassist.onrender.com/api/v1/drivers/test](https://rideassist.onrender.com/api/v1/drivers/test)
+- Detailed backend documentation can be found at: [https://documenter.getpostman.com/view/9600373/2s93eSZas9](https://documenter.getpostman.com/view/9600373/2s93eSZas9)
 
-https://documenter.getpostman.com/view/9600373/2s93eSZas9
+## Getting Started
 
+To run the QR-RideAssist backend locally, follow these steps:
 
-## Commands
+1. Install the project dependencies:
 
-- Install the dependencies using : `` npm i ``
-- Start the app using : `` npm start ``
+   ```bash
+   npm install
+   ```
 
-Please note : Before running the application, make sure to make a .env file in the root path and make sure it has your mongoDB connection string as ```mongoPath="dummy connection path"``` (it will start something like mongodb+srv....)
+2. Start the backend server:
 
-## Frontend 
+   ```bash
+   npm start
+   ```
 
-A dummy react native frontend for a cab hailing application using these API's can be found at : 
+   Please note: Before running the application, make sure to create a `.env` file in the root directory and add your MongoDB connection string as `mongoPath="dummy connection path"`. The connection string should start with something like `mongodb+srv...`.
 
-https://github.com/Keerat666/RideAssist
+## Frontend
 
+A dummy React Native frontend for the cab hailing application, utilizing the QR-RideAssist backend API, is available at: [https://github.com/Keerat666/RideAssist](https://github.com/Keerat666/RideAssist)
 
+## Contribution
 
+Contributions are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue or submit a pull request. We appreciate your support in improving the QR-RideAssist project.
+
+## License
+
+This project is licensed under the MIT License. You can find more details in the [LICENSE](LICENSE) file.
+
+## Contact
+
+If you have any questions or need further assistance, feel free to reach out to us:
+
+- Email: [your-email@example.com](mailto:your-email@example.com)
+
+Thank you for using QR-RideAssist!
