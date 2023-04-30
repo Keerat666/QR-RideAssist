@@ -76,8 +76,8 @@ module.exports = {
             quality: 0.95,
             margin: 1,
             color: {
-              dark: '#208698',
-              light: '#FFF',
+              dark: '#2c2e3b',
+              light: '#f4bb2d',
             },
           }
 
@@ -106,7 +106,7 @@ module.exports = {
 
       async getLatestTrips (req, res)  {
         try {
-          const latestTrips = await TripModel.find({driver_id : req.query.driverID}).sort({ date: -1 }).limit(5);
+          const latestTrips = await TripModel.find({driver_id : req.query.driverID, trip_status :"Finished" }).sort({ id_created_at: -1 }).limit(5);
           res.status(200).json(latestTrips);
         } catch (error) {
           res.status(500).json({ message: error.message });
