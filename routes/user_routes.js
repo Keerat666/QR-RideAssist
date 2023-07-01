@@ -21,6 +21,10 @@ router.get('/UserByID', function(req, res) {
     crud.getEntryByID(req, res, UserModel)
 });
 
+router.get('/UserByMobile', function(req, res) {
+    crud.getEntryByMobile(req, res, UserModel)
+});
+
 router.post('/signup', function(req, res) {
     crud.createEntry(req, res, UserModel)
 });
